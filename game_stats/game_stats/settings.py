@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-9czu(^@rf_pl!xyx2uiy+)%+ks$5)%xssavmzxh=ulbnemyziw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["edgeofascension.pythonanywhere.com "]
+ALLOWED_HOSTS = ["edgeofascension.pythonanywhere.com"]
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["edgeofascension.pythonanywhere.com "]
 INSTALLED_APPS = [
     'rest_framework',
     'events',
+    'corsheaders',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Add this
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -123,3 +125,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',  # If you're running the API on localhost
+    'http://127.0.0.1:8000',  # Common alternative
+    'https://elthran.itch.io/playground-edge-of-ascension',  # Your game hosted domain
+]
