@@ -10,6 +10,7 @@ class Event(models.Model):
     ]
 
     event_type = models.CharField(max_length=50, choices=EVENT_CHOICES)
+    game_version = models.CharField(max_length=100, default="000.000.011")
     run_id = models.CharField(max_length=100)
     player = models.CharField(max_length=100)
     patron = models.CharField(max_length=100, null=True, blank=True)
