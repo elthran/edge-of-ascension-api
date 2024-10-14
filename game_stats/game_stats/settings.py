@@ -129,5 +129,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',  # If you're running the API on localhost
     'http://127.0.0.1:8000',  # Common alternative
-    'https://elthran.itch.io/playground-edge-of-ascension',  # Your game hosted domain
+    'https://elthran.itch.io',  # Your game hosted domain
+    'https://html-classic.itch.zone'
 ]
