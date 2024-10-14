@@ -25,8 +25,11 @@ SECRET_KEY = "django-insecure-9czu(^@rf_pl!xyx2uiy+)%+ks$5)%xssavmzxh=ulbnemyziw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["edgeofascension.pythonanywhere.com"]
-
+ALLOWED_HOSTS = [
+    "edgeofascension.pythonanywhere.com",  # Your production domain
+    "127.0.0.1",  # Local development
+    "localhost",  # Optional, in case you access via localhost
+]
 
 # Application definition
 
