@@ -30,7 +30,7 @@ def leaderboard(request):
     game_version = request.query_params.get('game_version', '000.000.011')
 
     # Step 2: Get the highest max_node for each run_id, and filter by game_version if provided
-    leaderboard_max_nodes = Event.objects.exclude(max_node__isnull=True)
+    leaderboard_max_nodes = Event.objects.exclude(max_node__isnull=True).filter(max_node__gte=3)
 
     if game_version:
         leaderboard_max_nodes = leaderboard_max_nodes.filter(game_version=game_version)
